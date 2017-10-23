@@ -1,0 +1,83 @@
+function recur(obj,val) { // recursion models function
+if (val=='add') {
+	if (obj instanceof THREE.Mesh) {
+        objects.push(obj);
+		obj.castShadow = true;
+        obj.receiveShadow = true;
+        obj.material.needsUpdate = true;
+		objects_temp.push(obj)
+	}
+    for (var i in obj.children) {
+        recur(obj.children[i],'add');
+	}
+}
+else if (val=='temp') {
+	if (obj instanceof THREE.Mesh) {
+        objects_temp.push(obj);
+	}
+	for (var i in obj.children) {
+        recur(obj.children[i],'temp');
+	}	
+}
+
+else if (val=='del') {
+	if (obj instanceof THREE.Mesh) {
+        obj.material.dispose();
+        obj.geometry.dispose();
+		objects_del(objects,obj);
+		obj.parent.remove(obj);
+        
+	}
+	for (var i in obj.children) {
+        recur(obj.children[i],'del');
+	}	
+}
+};
+function objects_del(arr) {
+    var what, a = arguments, L = a.length, ax;
+    while (L > 1 && arr.length) {
+        what = a[--L];
+        while ((ax= arr.indexOf(what)) !== -1) {
+            arr.splice(ax, 1);
+        }
+    }
+    return arr
+};
+
+function modul_open (name){  // DOM element manipulation
+var elem=dgbid(name).style;
+if (elem.left!==""){
+if (elem.left>=0+"px"){elem.left=-1*parseInt(elem.width)-25+'px'}
+else {elem.left="0px"}}
+else if (elem.right!==""){
+if (elem.right>=0+"px"){elem.right=-1*parseInt(elem.width)-25+'px'}
+else {elem.right="0px"}}
+};
+
+function remamber(op,nam,val){ // create cookies
+if (op=='all'){savescene()}
+else if (op == "create"){if (nam !== "" && nam !== null && val !== "" && val !== null) {cookcreate(nam,val)}}
+else if(op == "delete") {if (nam !== "" && nam !== null) {document.cookie = nam+"=; expires=Thu, 01 Jan 1970;";console.log('Delet check: '+document.cookie)+';';}}
+else if (op == "show") {
+        if (nam == "" || nam == null) {console.log('Cook exists: '+document.cookie)}
+        else if (nam !== "" && nam !== null) {cookshow(nam)}}
+
+function cookcreate(name,value) {
+document.cookie = name + "=" + value + ";";
+console.log('Created: '+document.cookie);}
+
+function cookshow(nam) {
+var fname=getCookie(nam);
+if (fname==null) {fname="";}
+if (fname!="") {fname='name: '+nam+'; value: '+fname;}
+console.log(fname);
+
+function getCookie(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++) {
+var c = ca[i];
+while (c.charAt(0)==' ') c = c.substring(1);
+if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length,c.length);
+}return null;
+}}}

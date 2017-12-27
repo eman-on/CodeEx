@@ -1,0 +1,423 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin:0px;
+  top:0px;
+}
+h3{
+    margin-top: 3px !important;
+}
+#root{
+  top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.blocker{
+  background-color: rgba(6,6,6,0.3);;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition-duration: 0.4s;
+}
+.blocker.hidden{
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.4s;
+}
+.InLineParent{
+  border: none;
+}
+.InLineChild{
+	display: inline-block;
+}
+.InLineChild.r{
+float: right;
+padding-right: 5px;
+}
+.InLineChild.l{
+float: left;
+padding-left: 5px;
+}
+.SLFirst {
+position: fixed;
+z-index: 2;
+background: #ddd;
+border: 1px solid #4CAF50;
+border-radius: 8px;
+width: 400px;
+margin-left: -210px;
+height: auto;
+margin-top: -100px;
+padding: 10px;
+left: 50%;
+top: 50%;
+opacity: 1;
+transition-duration: 0.4s;
+}
+.SLFirst.hidden{
+transition-duration: 0.4s;
+top:-50%;
+opacity: 0;
+}
+table{
+  width:100%;
+}
+.button_green {
+      background-color: white; /* Green */
+      border: none;
+      color: black;
+      padding: 9px;
+      width: 93%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 0px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 2px solid #4CAF50;
+      }
+.button_green.selected{
+  background-color: #4CAF50;
+  color: white;
+}
+.button_green:hover {
+      background-color: #4CAF50;
+      color: white;
+}
+.MenuLabel{
+margin: 0px;
+color: #424242;
+padding-top: 6px;
+}
+.MenuTable{
+height: 186px;
+overflow: auto;
+overflow-x: hidden;
+}
+.Center{
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+.SLSearch, [contenteditable] {
+  caret-color: #4CBF50;
+}
+.SLSearch { /* AngularJS */
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  background-image:url('http://i47.tinypic.com/r02vbq.png');
+  background-repeat:no-repeat;
+  background-position:right center;outline:0;
+  border-bottom-color: #4CAF50;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: #4CAF50;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: #4CAF50;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #4CAF50;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: rgb(73, 80, 87);
+  cursor: text;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  height: 38px;
+  letter-spacing: normal;
+  line-height: 24px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  text-align: start;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  text-transform: none;
+  touch-action: manipulation;
+  transition-delay: 0s, 0s;
+  transition-duration: 0.15s, 0.15s;
+  transition: border-color, box-shadow;
+  transition-timing-function: ease-in-out, ease-in-out;
+  width: 100%;
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+  -webkit-appearance: none;
+  -webkit-rtl-ordering: logical;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-border-image: none;
+}
+.LeftPanel{
+      position: absolute;
+      top: 0px;
+      left: 0%;
+      height: 100%;
+      width: 15.9%;
+      background: #d6d6d6;
+      transition: 0.5s;
+      min-width: 100px;
+      float: left;
+      border-right: 2px solid #4CAF50;
+      transition: all 0.5s;
+}
+.LeftPanel.mini{
+      left:-16%;
+}
+.LeftPanel.animate{
+    left: 0%;
+    border-right: 2px solid #4CAF50;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+    animation: leftPanel 3s infinite;
+}
+@keyframes leftPanel {
+    20%{left:-2%;}
+    25%{left:-2%;}
+    35%{left:0%;}
+    45%{left:-0.5%;}
+    46%{left:-0.5%;}
+    60%{left:0%}
+    100%{}
+}
+.PanelContent{
+  overflow: auto;
+  height: 100%;
+}
+.PanelHeader{
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  background: #aaa;
+  width: 100%;
+}
+.PanelHeader.MainContent{
+  background: #bdbdbd;
+  height: 51px;
+}
+.Content_Extend {
+background-Color: rgba(255, 255, 255, 0.7);
+position: relative;
+height: 30px;
+width: 30px;
+border-Radius: 10px;
+transition: 0.35s;
+top: 5px;
+padding:3px;
+border: none;
+border: 2px solid #4CAF50;
+overflow:hidden;
+cursor: pointer;
+}
+.Content_Extend:hover {
+background-Color: #4CAF50;
+transition: 0.2s;
+color:white;
+}
+.Content_Extend.mini {
+opacity: 0.6;
+}
+.Content_Extend:hover {
+background-Color: #4CAF50;
+transition: 0.2s;
+opacity: 1;
+}
+.Content_Extend:after {
+    content: '';
+    height: 15px;
+    border-left: 2px solid #424242;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(60deg);
+    left: 11px;
+	bottom: 9px;
+	transition: 0.15s;
+}
+.Content_Extend:before {
+    content: '';
+    height: 15px;
+    border-left: 2px solid #424242;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(120deg);
+    left: 11px;
+	bottom: 2px;
+	transition: 0.15s;
+}
+.Content_Extend.mini:after {
+  transform: rotate(90deg);
+  left: 12px;
+	bottom: 9px;
+	transition: 0.15s;
+}
+.Content_Extend.mini:before {
+  transform: rotate(90deg);
+  left: 12px;
+	bottom: 2px;
+	transition: 0.15s;
+}
+.Content_Extend:hover:after {
+    content: '';
+    height: 18px;
+    border-left: 2px solid #fff;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(60deg);
+    left: 11px;
+	bottom: 8px;
+	transition: 0.15s;
+}
+.Content_Extend:hover:before {
+    content: '';
+    height: 18px;
+    border-left: 2px solid #fff;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(120deg);
+    left: 11px;
+	bottom: -0px;
+	transition: 0.15s;
+}
+.Content_Extend.menu:after {
+    visibility: hidden;
+}
+.Content_Extend.menu:before {
+    visibility: hidden;
+}
+.container{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.Content_Extend.mini:hover:after {
+    transform: rotate(120deg);
+    left: 13px;
+}
+.Content_Extend.mini:hover:before {
+    transform: rotate(60deg);
+    left: 13px;
+}
+.Content{
+      position: relative;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 84%;
+      background: #d6d6d6;
+      float: right;
+      transition: 0.5s;
+}
+.Content.mini{
+      width: 100%;
+}
+.button_MC{
+  height: 50px;
+  width: 100px;
+  color: black;
+  background: #bdbdbd;
+  border: none;
+  border-right: 1px solid #999;
+  float: left;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  /*background: url('/icons/meal.png') 10px 10px no-repeat*/
+}
+.button_MC:hover{
+  color:white;
+  background: #4CAF50;
+  background-color:  #4CAF50;
+}
+.button_MC.selected{
+  color:white;
+  background:  #4CAF50;
+  border-bottom: 3px solid #fff;
+}
+.ProductsPage{
+    position: absolute;
+    background: #d6d6d6;
+    width: 100%;
+    right: 0px;
+    top: 120px;
+    bottom:0px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.ProductsTable{
+    background: #c7c7c7;
+}
+tr{
+  transition-duration: 0.2s;
+}
+tr:hover{
+  background: #bbb;
+    transition-duration: 0.2s;
+}
+td{
+  padding: 5px;
+}
+th{
+  padding: 5px;
+  background: #aaa;
+}
+th.tCheck,td.tCheck{
+  width: 20px;
+}
+th.tPrice{
+  width: 117px;
+}
+td.tPrice{
+  width: 100px;
+}
+.TablePriseTd{
+    background: #c7c7c7;
+}
+.TablePriseTd.won{
+    background: #afa;
+}
+.TablePriseTd.loose{
+    background: #faa;
+}

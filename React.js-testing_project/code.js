@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import axios from 'axios' //JSON processing
 
-function cl(s){console.log(s)}
-
 class CitysMenu extends React.Component{
  constructor(props){
     super(props);
